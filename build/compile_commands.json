@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/Users/Ojas/Desktop/Dev/C++RAT/build",
+  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/server.dir/includes_CXX.rsp -g -std=gnu++1z -o CMakeFiles\\server.dir\\src\\server.cpp.obj -c C:\\Users\\Ojas\\Desktop\\Dev\\C++RAT\\src\\server.cpp",
+  "file": "C:/Users/Ojas/Desktop/Dev/C++RAT/src/server.cpp",
+  "output": "CMakeFiles/server.dir/src/server.cpp.obj"
+}
+]

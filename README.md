@@ -1,0 +1,2 @@
+# REMOTE ACCESS TROJAN in C++
+This is made for educational purposes only to demonstrate the concepts involved in making a Remote Access Trojan in C++. I do not hold any responsibility for any negative use of this application.
