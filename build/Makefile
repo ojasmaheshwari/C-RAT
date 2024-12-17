@@ -128,6 +128,30 @@ server/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\server.dir\build.make CMakeFiles/server.dir/build
 .PHONY : server/fast
 
+src/payload.obj: src/payload.cpp.obj
+.PHONY : src/payload.obj
+
+# target to build an object file
+src/payload.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\server.dir\build.make CMakeFiles/server.dir/src/payload.cpp.obj
+.PHONY : src/payload.cpp.obj
+
+src/payload.i: src/payload.cpp.i
+.PHONY : src/payload.i
+
+# target to preprocess a source file
+src/payload.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\server.dir\build.make CMakeFiles/server.dir/src/payload.cpp.i
+.PHONY : src/payload.cpp.i
+
+src/payload.s: src/payload.cpp.s
+.PHONY : src/payload.s
+
+# target to generate assembly for a file
+src/payload.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\server.dir\build.make CMakeFiles/server.dir/src/payload.cpp.s
+.PHONY : src/payload.cpp.s
+
 src/server.obj: src/server.cpp.obj
 .PHONY : src/server.obj
 
@@ -161,6 +185,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... server
+	@echo ... src/payload.obj
+	@echo ... src/payload.i
+	@echo ... src/payload.s
 	@echo ... src/server.obj
 	@echo ... src/server.i
 	@echo ... src/server.s

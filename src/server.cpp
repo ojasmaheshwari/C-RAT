@@ -10,6 +10,8 @@
 #include <winsock2.h>
 #include <string>
 
+#include "payload.h"
+
 #pragma comment(lib, "Ws2_32.lib")
 
 static const char *DEFAULT_PORT = "3000";
@@ -43,16 +45,9 @@ public:
 
         std::cout << getClientIp() << " connected\n";
 
-        char recvbuf[512];
-        int iResult, iSendResult;
-        int recvbuflen = 512;
+        Payload payload(m_ClientSocket);
+        payload.run();
 
-        do
-        {
-            iResult = recv(m_ClientSocket, recvbuf, recvbuflen, 0);
-            if (iResult > 0)
-                printf("Bytes received: %d\n", iResult);
-        } while (iResult > 0);
     }
 
     ~Server()

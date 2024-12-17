@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 project(RAT LANGUAGES CXX)
 
 # set(CMAKE_CXX_COMPILER "C:\MinGW\bin\g++")
-set(SOURCES src/server.cpp)
+set(SOURCES src/server.cpp src/payload.cpp)
 set(INCLUDES src/includes)
 
 set(CMAKE_BUILD_TYPE Debug)
