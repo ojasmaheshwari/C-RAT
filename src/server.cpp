@@ -36,14 +36,12 @@ public:
             WSACleanup();
         }
 
-        m_ClientSocket = accept(m_ListenSocket, (struct sockaddr*)&m_ClientInfo, &m_ClientInfoSize);
-        if (!checkSocket(m_ClientSocket, "ClientSocket"))
+        m_ClientSocket = accept(m_ListenSocket, (SOCKADDR*)&m_ClientInfo, &m_ClientInfoSize);
+        if (!checkSocket(m_ClientSocket, "ClientSocket")) {
             closesocket(m_ListenSocket); return;
-        
-        getpeername(m_ClientSocket, (struct sockaddr *)&m_ClientInfo, (int *)(&m_ClientInfoSize));
-        const char* ipAddress = inet_ntoa(m_ClientInfo.sin_addr);
+        }
 
-        std::cout << ipAddress << " connected!\n";
+        std::cout << getClientIp() << " connected\n";
 
         char recvbuf[512];
         int iResult, iSendResult;
@@ -87,6 +85,11 @@ private:
         m_Hints.ai_flags = AI_PASSIVE;
     }
 
+    std::string getClientIp() {
+        std::string ipAddress = inet_ntoa(m_ClientInfo.sin_addr);
+        return ipAddress;
+    }
+
     void setupAddressInfo()
     {
         int result;
@@ -124,6 +127,7 @@ private:
             WSACleanup();
             return false;
         }
+        return true;
     }
 
 private:
