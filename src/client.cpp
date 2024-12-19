@@ -21,22 +21,29 @@ static const int DATA_NUM_LEN = 20;
 
 std::string recieve_command(SOCKET &ConnectSocket)
 {
-    char data_len_c[DATA_NUM_LEN];
+    char data_len_recv_buffer[DATA_NUM_LEN];
     int data_len;
-    int iResult = 1;
 
     // Receive until the peer closes the connection
-    iResult = recv(ConnectSocket, data_len_c, DATA_NUM_LEN, 0);
-    if (iResult > 0)
+    int bytesReceived = recv(ConnectSocket, data_len_recv_buffer, DATA_NUM_LEN, 0);
+    if (bytesReceived > 0)
     {
+        char data_len_c[bytesReceived + 1];
+        for (int i = 0; i < bytesReceived; i++) data_len_c[i] = data_len_recv_buffer[i];
+
         data_len = atoi(data_len_c);
-        char command[data_len + 1];
-        iResult = recv(ConnectSocket, command, data_len * sizeof(char), 0);
-        command[data_len] = '\0';
+        std::cout << "Receiving " << data_len << " bytes of data\n";
+
+        char command_recv_buffer[data_len];
+        bytesReceived = recv(ConnectSocket, command_recv_buffer, data_len, 0);
+
+        char command[bytesReceived + 1];
+        for (int i = 0; i < bytesReceived; i++) command[i] = command_recv_buffer[i];
+        command[bytesReceived] = '\0';
 
         return command;
     }
-    else if (iResult == 0) {
+    else if (bytesReceived == 0) {
         printf("Connection closed\n");
         return "NULL_COMMAND";
     }

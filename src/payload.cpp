@@ -26,7 +26,7 @@ void Payload::run()
             WSACleanup();
         }
 
-        result = send(m_ClientSocket, command.c_str(), (int)strlen(command.c_str()) + 1, 0);
+        result = send(m_ClientSocket, command.c_str(), (int)strlen(command.c_str()), 0);
         if (result == SOCKET_ERROR)
         {
             printf("send failed with error: %d\n", WSAGetLastError());
