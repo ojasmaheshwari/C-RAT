@@ -1,6 +1,6 @@
-CMakeFiles/server.dir/src/payload.cpp.obj: \
- C:\Users\Ojas\Desktop\Dev\C++RAT\src\payload.cpp \
- C:\Users\Ojas\Desktop\Dev\C++RAT\src\payload.h \
+CMakeFiles/server.dir/src/common_funcs.cpp.obj: \
+ C:\Users\Ojas\Desktop\Dev\C++RAT\src\common_funcs.cpp \
+ C:\Users\Ojas\Desktop\Dev\C++RAT\src\common_funcs.h \
  c:\mingw\include\windows.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\stdarg.h \
  c:\mingw\include\windef.h c:\mingw\include\w32api.h \
@@ -116,5 +116,4 @@ CMakeFiles/server.dir/src/payload.cpp.obj: \
  c:\mingw\include\sys\time.h c:\mingw\include\nspapi.h \
  c:\mingw\include\wtypes.h c:\mingw\include\iphlpapi.h \
  c:\mingw\include\iprtrmib.h c:\mingw\include\ipifcons.h \
- c:\mingw\include\ipexport.h c:\mingw\include\iptypes.h \
- C:\Users\Ojas\Desktop\Dev\C++RAT\src\common_funcs.h
+ c:\mingw\include\ipexport.h c:\mingw\include\iptypes.h

@@ -128,6 +128,30 @@ server/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\server.dir\build.make CMakeFiles/server.dir/build
 .PHONY : server/fast
 
+src/common_funcs.obj: src/common_funcs.cpp.obj
+.PHONY : src/common_funcs.obj
+
+# target to build an object file
+src/common_funcs.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\server.dir\build.make CMakeFiles/server.dir/src/common_funcs.cpp.obj
+.PHONY : src/common_funcs.cpp.obj
+
+src/common_funcs.i: src/common_funcs.cpp.i
+.PHONY : src/common_funcs.i
+
+# target to preprocess a source file
+src/common_funcs.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\server.dir\build.make CMakeFiles/server.dir/src/common_funcs.cpp.i
+.PHONY : src/common_funcs.cpp.i
+
+src/common_funcs.s: src/common_funcs.cpp.s
+.PHONY : src/common_funcs.s
+
+# target to generate assembly for a file
+src/common_funcs.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\server.dir\build.make CMakeFiles/server.dir/src/common_funcs.cpp.s
+.PHONY : src/common_funcs.cpp.s
+
 src/payload.obj: src/payload.cpp.obj
 .PHONY : src/payload.obj
 
@@ -185,6 +209,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... server
+	@echo ... src/common_funcs.obj
+	@echo ... src/common_funcs.i
+	@echo ... src/common_funcs.s
 	@echo ... src/payload.obj
 	@echo ... src/payload.i
 	@echo ... src/payload.s

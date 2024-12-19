@@ -1,4 +1,5 @@
 #include "payload.h"
+#include "common_funcs.h"
 
 // Metadata which indicates max number of digits for receiving size of output
 static const int DATA_NUM_LEN = 20;
@@ -16,6 +17,9 @@ void Payload::run()
         std::string command;
         std::cin >> command;
 
+        common::Send(m_ClientSocket, command);
+
+        /*
         const char *data_len = std::to_string(command.length()).c_str();
 
         int result = send(m_ClientSocket, data_len, (int)strlen(data_len), 0);
@@ -33,5 +37,6 @@ void Payload::run()
             closesocket(m_ClientSocket);
             WSACleanup();
         }
+        */
     }
 }

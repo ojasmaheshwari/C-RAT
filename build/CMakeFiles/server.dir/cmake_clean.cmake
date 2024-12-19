@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/server.dir/src/common_funcs.cpp.obj"
+  "CMakeFiles/server.dir/src/common_funcs.cpp.obj.d"
   "CMakeFiles/server.dir/src/payload.cpp.obj"
   "CMakeFiles/server.dir/src/payload.cpp.obj.d"
   "CMakeFiles/server.dir/src/server.cpp.obj"

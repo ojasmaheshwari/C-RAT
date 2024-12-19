@@ -10,5 +10,11 @@
   "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/server.dir/includes_CXX.rsp -g -std=gnu++1z -o CMakeFiles\\server.dir\\src\\payload.cpp.obj -c C:\\Users\\Ojas\\Desktop\\Dev\\C++RAT\\src\\payload.cpp",
   "file": "C:/Users/Ojas/Desktop/Dev/C++RAT/src/payload.cpp",
   "output": "CMakeFiles/server.dir/src/payload.cpp.obj"
+},
+{
+  "directory": "C:/Users/Ojas/Desktop/Dev/C++RAT/build",
+  "command": "C:\\MinGW\\bin\\g++.exe  @CMakeFiles/server.dir/includes_CXX.rsp -g -std=gnu++1z -o CMakeFiles\\server.dir\\src\\common_funcs.cpp.obj -c C:\\Users\\Ojas\\Desktop\\Dev\\C++RAT\\src\\common_funcs.cpp",
+  "file": "C:/Users/Ojas/Desktop/Dev/C++RAT/src/common_funcs.cpp",
+  "output": "CMakeFiles/server.dir/src/common_funcs.cpp.obj"
 }
 ]
